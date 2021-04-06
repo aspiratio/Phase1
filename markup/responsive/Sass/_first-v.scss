@@ -1,0 +1,34 @@
+#first-v{
+    background-image: url("../img/bg1.jpg");
+	background-size: cover;
+    width: 100%;
+    height: 100vh;
+	position: relative;
+}
+
+.first-v__wrap{
+	width: 250px;
+	height: 230px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.catch{
+	color: #fff;
+	font-size: 27px;
+	font-weight: bold;
+
+	&::after{
+		display: block;
+		width: 9.7rem;
+		content: "";
+		border-top: 1px solid #fff;
+		margin: 20px auto 0;
+	}
+}
