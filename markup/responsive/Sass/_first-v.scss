@@ -12,6 +12,7 @@
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
+	align-items: center;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -30,5 +31,19 @@
 		content: "";
 		border-top: 1px solid #fff;
 		margin: 20px auto 0;
+	}
+}
+
+.fv-btn{
+	color: #fff;
+	width: 200px;
+	height: 50px;
+	background: linear-gradient(to right, $sky, $navy);
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 5px #070707;
+
+	.btn-icon{
+		margin-right: 5px;
 	}
 }

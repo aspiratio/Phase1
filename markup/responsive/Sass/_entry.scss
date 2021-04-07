@@ -1,0 +1,28 @@
+#entry{
+	height: 482px;
+	width: 100%;
+	position: relative;
+}
+
+.entry-wrap{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 123px;
+	width: 320px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.entry-copy{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.entry-btn{
+	@extend .fv-btn;
+	width: 100%;
+}

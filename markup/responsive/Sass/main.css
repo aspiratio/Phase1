@@ -103,38 +103,12 @@ body {
   font-size: 12px;
   line-height: 1.67; }
 
-.inner {
-  width: 80%;
-  margin: 0 auto;
-  padding: 90px 0; }
-
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.8rem;
-  font-style: italic;
-  margin-bottom: 60px; }
-  .title--b {
-    font-weight: bold; }
-  .title::before, .title::after {
-    display: block;
-    content: "";
-    width: 3rem;
-    border-top: 1px solid #191919;
-    margin-right: 2rem; }
-  .title::after {
-    margin-right: 0;
-    margin-left: 2rem; }
-
 header {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px;
   color: #fff;
-  position: absolute;
-  z-index: 20; }
+  background-color: black; }
   header nav {
     width: 45%; }
     header nav ul {
@@ -162,7 +136,6 @@ header {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -180,67 +153,12 @@ header {
     border-top: 1px solid #fff;
     margin: 20px auto 0; }
 
-.fv-btn, .entry-btn {
-  color: #fff;
+.fv-btn {
   width: 200px;
   height: 50px;
-  background: linear-gradient(to right, #06BEB6, #283C86);
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 5px #070707; }
-  .fv-btn .btn-icon, .entry-btn .btn-icon {
-    margin-right: 5px; }
-
-#about {
-  background-color: #F8F8F8; }
-
-.about-wrap {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; }
-
-.about-item {
-  width: 27%;
-  background-color: #fff;
-  padding: 40px 3.5vw 50px; }
-  .about-item:nth-child(n+4) {
-    margin-top: 47px; }
-  .about-item__title {
-    font-size: 2.2rem;
-    text-align: center; }
-  .about-item__img {
-    width: 122px;
-    height: 122px;
-    margin: 20px auto 35px; }
-    .about-item__img img {
-      width: 100%;
-      height: 100%; }
+  background: linear-gradient(to right, #06BEB6, #283C86); }
 
 .news__img {
-  width: 100%; }
-
-#entry {
-  height: 482px;
-  width: 100%;
-  position: relative; }
-
-.entry-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 123px;
-  width: 320px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-
-.entry-copy {
-  font-weight: bold;
-  font-size: 18px; }
-
-.entry-btn {
   width: 100%; }
 
 footer {
