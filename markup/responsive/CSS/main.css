@@ -216,8 +216,42 @@ header {
       width: 100%;
       height: 100%; }
 
+#news {
+  background-image: url("../img/bg2.jpg");
+  background-size: cover; }
+  #news .title {
+    color: #fff; }
+    #news .title::before, #news .title::after {
+      border-top: 1px solid #fff; }
+
+.news-wrap {
+  display: flex;
+  justify-content: space-between; }
+
+.news-item {
+  width: 30.5%;
+  background-color: #fff; }
+
 .news__img {
-  width: 100%; }
+  width: 100%;
+  height: 207px; }
+  .news__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.news-content {
+  padding: 20px 20px 25px;
+  color: #191919; }
+  .news-content__day {
+    font-size: 1rem;
+    font-weight: bold; }
+  .news-content__title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 8px 0 24px; }
+  .news-content__intro {
+    font-size: 1.2rem; }
 
 #entry {
   height: 482px;
@@ -242,6 +276,64 @@ header {
 
 .entry-btn {
   width: 100%; }
+
+#contact {
+  background-image: url("../img/bg3.png");
+  background-size: cover;
+  color: #fff; }
+  #contact .title {
+    color: #fff; }
+    #contact .title::before, #contact .title::after {
+      border-top: 1px solid #fff; }
+
+.contact-wrap {
+  width: 600px;
+  max-width: 600px;
+  margin: 60px auto 0;
+  font-size: 1.5rem; }
+
+.contact-caution {
+  margin-bottom: 25px; }
+
+.contact-box {
+  margin-bottom: 33px; }
+  .contact-box input, .contact-box select {
+    width: 100%;
+    height: 55px;
+    padding-left: 15px;
+    border-radius: 7px; }
+  .contact-box select {
+    appearance: none; }
+  .contact-box:nth-of-type(3) {
+    position: relative; }
+  .contact-box:nth-of-type(3)::after {
+    background-image: url("../img/arrow.png");
+    background-size: 100%;
+    display: block;
+    position: absolute;
+    top: 60%;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    content: ""; }
+  .contact-box:nth-of-type(4) {
+    margin-bottom: 0px; }
+  .contact-box textarea {
+    width: 100%;
+    height: 185px;
+    padding-top: 20px;
+    padding-left: 15px;
+    border-radius: 7px; }
+
+.contact-text {
+  margin-bottom: 10px; }
+
+.red {
+  color: #FF0000;
+  margin-left: 8px; }
+
+.caution-red {
+  margin-left: 0; }
 
 footer {
   background-color: #191919;
