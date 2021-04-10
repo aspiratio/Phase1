@@ -9,6 +9,11 @@ header{
 
     nav{
         width: 45%;
+
+        @include tab{
+            display: none;
+        }
+
         ul{
             display: flex;
             justify-content: space-between;
@@ -24,5 +29,20 @@ header{
 
 .ham{
     display: none;
+
+    @include tab{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 25px;
+        height: 14px;
+        span{
+            display: inline-block;
+            height: 1px;
+            width: 100%;
+            background-color: #fff;
+        }
+    }
+
 }
 

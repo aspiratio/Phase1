@@ -17,6 +17,14 @@
 	max-width: 600px;
 	margin: 60px auto 0;
 	font-size: 1.5rem;
+
+	@include tab{
+		width: 80%;
+	}
+
+	@include sp{
+		width: 100%;
+	}
 }
 
 .contact-caution{

@@ -18,6 +18,11 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
+
+	@include sp{
+		height: 50%;
+		top: 60%;
+	}
 }
 
 .catch{

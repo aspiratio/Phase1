@@ -1,3 +1,25 @@
+/* mixin */
+// PC画面サイズ以上
+@mixin pc {
+    @media (min-width:1025px){
+        @content;
+    }
+}
+
+// タブレット画面
+@mixin tab {
+    @media (max-width:1024px){
+        @content;
+    }
+}
+
+// スマホ画面
+@mixin sp {
+    @media (max-width:599px){
+        @content;
+    }
+}
+
 // 共通部分
 
 html{
@@ -16,6 +38,11 @@ $navy: #283C86;
 	width: 80%;
 	margin: 0 auto;
 	padding: 90px 0;
+
+	@include tab{
+		padding: 50px 0;
+		width: 90%;
+	}
 }
 
 .title{
@@ -25,6 +52,10 @@ $navy: #283C86;
 	font-size: 1.8rem;
 	font-style: italic;
 	margin-bottom: 60px;
+
+	@include tab{
+		margin-bottom: 40px;
+	}
 
 	&--b{
 		font-weight: bold;
