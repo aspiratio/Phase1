@@ -1,0 +1,46 @@
+#first-v{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.first-v-wrap{
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.first-message{
+	width: 46%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.message-content{
+	width: 66%;
+	height: 220px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+	&__jp{
+		font-size: 3.8rem;
+		font-family: serif;
+		margin-bottom: 50px;
+	}
+
+	&__en{
+		font-size: 3.8rem;
+		font-family: Zapfino;
+		line-height: 3;
+	}
+}
+.first-img{
+	width: 54%;
+	height: 100%;
+	background-image: url("../img/Blond\ woman\ with\ long\ curly\ beautiful\ hair.png");
+	background-size: cover;
+}

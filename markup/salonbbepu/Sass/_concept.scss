@@ -1,0 +1,53 @@
+#concept{
+	width: 100%;
+	height: 970px;
+	background: linear-gradient(180deg, #A193861F 0%, #A193861F 40%, #A1938689 40%, #A1938689 100%);
+}
+
+.concept-wrap{
+	width: 100%;
+	height: 615px;
+}
+
+.concept-img{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 413px;
+
+	&__1{
+		width: 62%;
+		height: 100%;
+		margin-right: 11px;
+		object-fit: cover;
+	}
+
+	&__2{
+		width: 36%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.concept-text{
+	display: flex;
+	justify-content: center;
+
+	&__title{
+		font-size: 4rem;
+		font-family: ヒラギノ明朝 Pro;
+		color: #FFFFFF;
+		width: 450px;
+		margin-right: 50px;
+		padding: 92px 0 60px;
+		text-align: center;
+	}
+
+	&__desc{
+		font-size: 1.6rem;
+		width: 422px;
+		height: 130px;
+		margin-top: 69px;
+		color: #FFFFFF;
+	}
+}

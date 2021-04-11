@@ -1,0 +1,47 @@
+#access{
+	background-color: #A193861F;
+	background-size: cover;
+}
+
+.inner-access{
+	width: 100%;
+	padding: 256px 0 70px;
+}
+
+.title-access{
+	@extend .title;
+	margin-left: 7.5%;
+}
+
+.access-wrap{
+	width: 100%;
+	height: 400px;
+	display: flex;
+}
+
+.access-item{
+	width: 40%;
+	background-color: #D0C5BA;
+	padding: 100px 0 100px 8%;
+
+	&__name{
+		font-size: 2.4rem;
+		color: #00000038;
+	}
+
+	&__info p{
+		font-size: 1.6rem;
+		color: #FFFFFF;
+		margin-top: 24px;
+	}
+}
+
+.access-map{
+	width: 60%;
+	height: 100%;
+
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
