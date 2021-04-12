@@ -8,29 +8,56 @@
 	padding-top: 85px;
 	display: flex;
 	border-top: 1px solid #70707036;
+
+	@include sp{
+		width: 89%;
+		flex-direction: column-reverse;
+		margin: 64px auto 19px;
+		padding-top: 60px;
+	}
 }
 
 .reserve-logo{
 	display: flex;
 	line-height: 3.2rem;
 
-	h2{
-		font-size: 3.2rem;
+	@include sp{
+		justify-content: space-between;
 	}
 
-	p{
+	h2{
+		font-size: 3.2rem;
+		color:#7070704D;
+
+		@include sp{
+			font-size: 1.8rem;
+		}
+	}
+
+	.sns-icon{
 		margin: auto 0;
+
 	}
 }
 
 .tw-icon{
 	margin: 0 0 0 25px;
 	font-size: 21px;
+	
+	@include sp{
+		font-size: 19px;
+		vertical-align: middle;
+	}
 }
 
 .fb-icon{
 	margin: 0 0 0 9px;
 	font-size: 21px;
+
+	@include sp{
+		font-size: 19px;
+		vertical-align: middle;
+	}
 }
 
 .reserve-btn{
@@ -44,4 +71,8 @@
 	border: 1px solid #707070;
 	line-height: 37px;
 	text-align: center;
+
+	@include sp{
+		margin: 0 auto 60px;
+	}
 }

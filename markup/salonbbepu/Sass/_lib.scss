@@ -34,6 +34,11 @@ body{
 	width: 85%;
 	margin: 0 auto;
 	padding: 256px 0 70px;
+
+	@include tab{
+		width: 90%;
+		padding: 60px 0;
+	}
 }
 
 .title{
@@ -43,11 +48,19 @@ body{
 	color: #707070;
 	margin-bottom: 11px;
 
+	@include tab{
+		margin-bottom: 50px;
+	}
+
 	&::after{
 		display: block;
 		content: "";
 		border-bottom: 1px solid #707070;
-		width: 10rem;
-		margin-left: 23px
+		width: 100px;
+		margin-left: 23px;
+
+		@include tab{
+			width: 44px;
+		}
 	}
 }

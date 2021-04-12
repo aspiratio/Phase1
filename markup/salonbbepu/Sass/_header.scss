@@ -4,10 +4,21 @@ header{
 	padding: 68px 0 0 77px;
 	position: absolute;
 	z-index: 10;
+	
+	@include tab{
+		height: 70px;
+		padding: 24px 14px 24px 21px;
+		position: static;
+		justify-content: space-between;
+	}
 
 	nav{
-		width: 30%;
+		width: 350px;
 		margin: auto 20px;
+
+		@include tab{
+			display: none;
+		}
 	}
 	
 	ul{
@@ -37,4 +48,32 @@ header{
 
 .hd-logo{
 	font-size: 3.8rem;
+
+	@include tab{
+		font-size: 2.2rem;
+	}
+}
+
+.ham{
+    display: none;
+
+    @include tab{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+		margin-top: 5px;
+        width: 16px;
+        height: 14px;
+        span{
+            display: inline-block;
+            height: 2px;
+            width: 100%;
+            background-color: #3B4043;
+
+			&:nth-child(3){
+				width: 70%;
+			}
+        }
+    }
+
 }

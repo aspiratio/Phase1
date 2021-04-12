@@ -109,6 +109,10 @@ body {
   width: 85%;
   margin: 0 auto;
   padding: 256px 0 70px; }
+  @media (max-width: 1024px) {
+    .inner {
+      width: 90%;
+      padding: 60px 0; } }
 
 .title, .title-access {
   display: flex;
@@ -116,12 +120,18 @@ body {
   font-size: 1.8rem;
   color: #707070;
   margin-bottom: 11px; }
+  @media (max-width: 1024px) {
+    .title, .title-access {
+      margin-bottom: 50px; } }
   .title::after, .title-access::after {
     display: block;
     content: "";
     border-bottom: 1px solid #707070;
-    width: 10rem;
+    width: 100px;
     margin-left: 23px; }
+    @media (max-width: 1024px) {
+      .title::after, .title-access::after {
+        width: 44px; } }
 
 header {
   width: 100%;
@@ -129,9 +139,18 @@ header {
   padding: 68px 0 0 77px;
   position: absolute;
   z-index: 10; }
+  @media (max-width: 1024px) {
+    header {
+      height: 70px;
+      padding: 24px 14px 24px 21px;
+      position: static;
+      justify-content: space-between; } }
   header nav {
-    width: 30%;
+    width: 350px;
     margin: auto 20px; }
+    @media (max-width: 1024px) {
+      header nav {
+        display: none; } }
   header ul {
     display: flex;
     justify-content: space-between;
@@ -151,11 +170,35 @@ header {
 
 .hd-logo {
   font-size: 3.8rem; }
+  @media (max-width: 1024px) {
+    .hd-logo {
+      font-size: 2.2rem; } }
+
+.ham {
+  display: none; }
+  @media (max-width: 1024px) {
+    .ham {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-top: 5px;
+      width: 16px;
+      height: 14px; }
+      .ham span {
+        display: inline-block;
+        height: 2px;
+        width: 100%;
+        background-color: #3B4043; }
+        .ham span:nth-child(3) {
+          width: 70%; } }
 
 #first-v {
   width: 100%;
   height: 100vh;
   position: relative; }
+  @media (max-width: 1024px) {
+    #first-v {
+      height: auto; } }
 
 .first-v-wrap {
   width: 100%;
@@ -168,6 +211,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 1024px) {
+    .first-message {
+      display: none; } }
 
 .message-content {
   width: 66%;
@@ -190,11 +236,39 @@ header {
   height: 100%;
   background-image: url("../img/Blond woman with long curly beautiful hair.png");
   background-size: cover; }
+  @media (max-width: 1024px) {
+    .first-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; } }
+
+.img-content {
+  display: none; }
+  @media (max-width: 1024px) {
+    .img-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 202px auto 277px; }
+      .img-content__en {
+        line-height: 100px;
+        font-size: 2.8rem;
+        font-family: Zapfino;
+        color: #FFFFFF; }
+      .img-content__jp {
+        font-size: 2.3rem;
+        font-family: ヒラギノ明朝 Pro;
+        color: #FFFFFF; } }
 
 #concept {
   width: 100%;
   height: 970px;
   background: linear-gradient(180deg, #A193861F 0%, #A193861F 40%, #A1938689 40%, #A1938689 100%); }
+  @media (max-width: 1024px) {
+    #concept {
+      height: 711px;
+      background: linear-gradient(180deg, #A193861F 0%, #A193861F 25%, #A1938689 25%, #A1938689 100%); } }
 
 .concept-wrap {
   width: 100%;
@@ -205,19 +279,32 @@ header {
   justify-content: space-between;
   width: 100%;
   height: 413px; }
+  @media (max-width: 1024px) {
+    .concept-img {
+      height: 205px; } }
   .concept-img__1 {
-    width: 62%;
+    width: 61%;
     height: 100%;
-    margin-right: 11px;
-    object-fit: cover; }
+    object-fit: cover;
+    object-position: right; }
+    @media (max-width: 1024px) {
+      .concept-img__1 {
+        width: 49%; } }
   .concept-img__2 {
-    width: 36%;
+    width: 37%;
     height: 100%;
     object-fit: cover; }
+    @media (max-width: 1024px) {
+      .concept-img__2 {
+        width: 49%; } }
 
 .concept-text {
   display: flex;
   justify-content: center; }
+  @media (max-width: 1024px) {
+    .concept-text {
+      flex-direction: column;
+      justify-content: space-between; } }
   .concept-text__title {
     font-size: 4rem;
     font-family: ヒラギノ明朝 Pro;
@@ -226,20 +313,42 @@ header {
     margin-right: 50px;
     padding: 92px 0 60px;
     text-align: center; }
+    @media (max-width: 1024px) {
+      .concept-text__title {
+        font-size: 1.8rem;
+        width: 200px;
+        margin: 50px auto 18px;
+        padding: 0; } }
   .concept-text__desc {
     font-size: 1.6rem;
     width: 422px;
     height: 130px;
     margin-top: 69px;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    line-height: 27px;
+    overflow: hidden; }
+    @media (max-width: 1024px) {
+      .concept-text__desc {
+        width: 100%;
+        height: 211px;
+        margin-top: 0; } }
 
 .menu-wrap {
   width: 100%;
   display: flex;
   justify-content: space-between; }
+  @media (max-width: 599px) {
+    .menu-wrap {
+      flex-direction: column; } }
 
 .menu-item {
   width: 25%; }
+  @media (max-width: 599px) {
+    .menu-item {
+      width: 100%;
+      margin-bottom: 63px; }
+      .menu-item:nth-of-type(3) {
+        margin-bottom: 0; } }
   .menu-item__img {
     width: 100%; }
     .menu-item__img img {
@@ -249,15 +358,24 @@ header {
     font-size: 3rem;
     padding: 30px 0;
     text-align: center; }
+    @media (max-width: 599px) {
+      .menu-item__title {
+        padding-left: 13px;
+        text-align: left; } }
   .menu-item__desc {
     font-size: 1.6rem;
+    line-height: 19px;
     width: 93%;
     margin: 0 auto; }
-  .menu-item__price {
+  .menu-item .menu-item__price {
+    display: block;
     font-size: 1.6rem;
     margin-top: 34px;
     margin-right: 13px;
     text-align: right; }
+    @media (max-width: 599px) {
+      .menu-item .menu-item__price {
+        margin: 26px 13px 0 0; } }
 
 #access {
   background-color: #A193861F;
@@ -266,6 +384,9 @@ header {
 .inner-access {
   width: 100%;
   padding: 256px 0 70px; }
+  @media (max-width: 599px) {
+    .inner-access {
+      padding: 60px 0; } }
 
 .title-access {
   margin-left: 7.5%; }
@@ -274,11 +395,19 @@ header {
   width: 100%;
   height: 400px;
   display: flex; }
+  @media (max-width: 599px) {
+    .access-wrap {
+      flex-direction: column-reverse;
+      height: 515px; } }
 
 .access-item {
   width: 40%;
   background-color: #D0C5BA;
   padding: 100px 0 100px 8%; }
+  @media (max-width: 599px) {
+    .access-item {
+      width: 100%;
+      padding: 30px 0 60px 20px; } }
   .access-item__name {
     font-size: 2.4rem;
     color: #00000038; }
@@ -290,9 +419,14 @@ header {
 .access-map {
   width: 60%;
   height: 100%; }
+  @media (max-width: 599px) {
+    .access-map {
+      width: 100%;
+      height: 231px; } }
   .access-map img {
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    object-fit: cover; }
 
 #reserve {
   width: 100%; }
@@ -303,22 +437,43 @@ header {
   padding-top: 85px;
   display: flex;
   border-top: 1px solid #70707036; }
+  @media (max-width: 599px) {
+    .reserve-wrap {
+      width: 89%;
+      flex-direction: column-reverse;
+      margin: 64px auto 19px;
+      padding-top: 60px; } }
 
 .reserve-logo {
   display: flex;
   line-height: 3.2rem; }
+  @media (max-width: 599px) {
+    .reserve-logo {
+      justify-content: space-between; } }
   .reserve-logo h2 {
-    font-size: 3.2rem; }
-  .reserve-logo p {
+    font-size: 3.2rem;
+    color: #7070704D; }
+    @media (max-width: 599px) {
+      .reserve-logo h2 {
+        font-size: 1.8rem; } }
+  .reserve-logo .sns-icon {
     margin: auto 0; }
 
 .tw-icon {
   margin: 0 0 0 25px;
   font-size: 21px; }
+  @media (max-width: 599px) {
+    .tw-icon {
+      font-size: 19px;
+      vertical-align: middle; } }
 
 .fb-icon {
   margin: 0 0 0 9px;
   font-size: 21px; }
+  @media (max-width: 599px) {
+    .fb-icon {
+      font-size: 19px;
+      vertical-align: middle; } }
 
 .reserve-btn {
   display: block;
@@ -331,5 +486,8 @@ header {
   border: 1px solid #707070;
   line-height: 37px;
   text-align: center; }
+  @media (max-width: 599px) {
+    .reserve-btn {
+      margin: 0 auto 60px; } }
 
 /*# sourceMappingURL=main.css.map */
