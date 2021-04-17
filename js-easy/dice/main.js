@@ -10,4 +10,4 @@ body.appendChild(dice);
 dice.style.width = "100%";
 dice.style.height = "100%";
 
-let num = 1;
+let num = ;
