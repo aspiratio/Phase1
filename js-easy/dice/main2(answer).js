@@ -81,7 +81,7 @@ const asyncFunc1 = async () => {
     });
   };
 
-  await random();
+  await random(); //random()が終わるまで次の処理には進まない
   turn -= 1;
   check();
 };

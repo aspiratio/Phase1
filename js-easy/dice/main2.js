@@ -25,15 +25,18 @@ let timer2;
 const startBtn1 = document.getElementById("player1Btn");
 const startBtn2 = document.getElementById("player2Btn");
 
-//関数を設定(まだ動くわけではない)
-	// 1〜6のランダムな数字を選び
-	// imgタグのsrc属性を更新
-	// disableを追加
-
+//数字の出目を入れる変数を宣言
+//勝敗を入れる変数を宣言
 let randomNum1;	
 let randomNum2;
 let result = document.getElementById("result");
 
+//関数を設定(まだ動くわけではない)
+	// 1〜6のランダムな数字を選び
+	// 選んだ数字で画像切り替え
+	// imgタグのsrc属性を更新
+	// disableを追加
+	
 const diceroll1 = function() {
 	randomNum1 = Math.floor(Math.random() * 6 + 1);
 	diceNum1 = `./img/saikoro${randomNum1}.png`;
@@ -47,17 +50,24 @@ const diceroll2 = function() {
 	startBtn2.setAttribute("disabled", true);
 }
 
-
 //ボタンをクリックするとイベントリスナーが動く
+	//もしresultが？？？でない（勝敗がついてる）ならリセットする（2回目以降用）
 	//100ミリ秒（0.1秒)ごとにdiceroll関数を動かす。変数timerに代入
-	//3000ミリ秒後にclearIntervalが働き、timerを止める
+	//3000ミリ秒後にserTimeoutが動く
+		//clearIntervalが働く
+		//timerを止める
+		//もし1と2のサイコロの出目が出揃っていれば
+			//勝敗を表示
+			//ボタンのdisabledを削除
+
 startBtn1.addEventListener("click", function() {
 	if (result.textContent !== "???") {
 		result.textContent = "???";
 		randomNum2 = undefined;
 	}
 	timer1 = setInterval("diceroll1()", 100);
-	setTimeout(function() {clearInterval(timer1);
+	setTimeout(function() {
+		clearInterval(timer1);
 		if (randomNum1 !== undefined && randomNum2 !== undefined) {
 			if (randomNum1 > randomNum2) {
 				result.textContent = "player1の勝利";
