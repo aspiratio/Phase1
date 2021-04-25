@@ -33,6 +33,7 @@ pushBtn.addEventListener("click", function() {
 	}
 	pushBtn.textContent = data[imgNum].text;
 	viewImg.src = data[imgNum].img;
+	console.log(typeof(imgNum));
 });
 
 /* <!-- 追加チャレンジ問題 --> */
@@ -43,4 +44,5 @@ skipBtn.addEventListener("click", function() {
 	imgNum = seasonSelect.value;
 	pushBtn.textContent = data[imgNum].text;
 	viewImg.src = data[imgNum].img;
+	console.log(typeof(imgNum));
 });
