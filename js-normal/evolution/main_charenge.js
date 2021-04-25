@@ -13,32 +13,28 @@ const setBtn = document.getElementById("setBtn");
 const resetBtn = document.getElementById("resetBtn");
 const showImg = document.getElementById("showImg");
 
-const img1 = "./img/evolution1.png";
-const img2 = "./img/evolution2.png";
-const img3 = "./img/evolution3.png";
-const img4 = "./img/evolution4.png";
-
 setBtn.addEventListener("click", function() {
 	showImg.innerHTML = "";
 	const randomNum = Math.random() * 10;
-	const image1 = document.createElement("img");
-	image1.setAttribute("src", img1)
+  
+	const image1 = document.createElement("div");
+	image1.innerHTML = "<img src='./img/evolution1.png' alt='原人'>"+"<p>原人</p>";
 	showImg.appendChild(image1);
 	if (randomNum >= 4) {
-		const image2 = document.createElement("img");
-		image2.setAttribute("src", img2)
-		showImg.appendChild(image2);
+    const image2 = document.createElement("div");
+    image2.innerHTML = "<img src='./img/evolution2.png' alt='旧人'>"+"<p>旧人</p>";
+    showImg.appendChild(image2);
 	}
 	if (randomNum >= 7) {
-		const image3 = document.createElement("img");
-		image3.setAttribute("src", img3)
-		showImg.appendChild(image3);
+    const image3 = document.createElement("div");
+    image3.innerHTML = "<img src='./img/evolution3.png' alt='新人'>"+"<p>新人</p>";
+    showImg.appendChild(image3);
 	}
 	if (randomNum >= 9) {
-		const image4 = document.createElement("img");
-		image4.setAttribute("src", img4)
-		showImg.appendChild(image4);
-	}
+    const image4 = document.createElement("div");
+    image4.innerHTML = "<img src='./img/evolution4.png' alt='現代人'>"+"<p>現代人</p>";
+    showImg.appendChild(image4);
+  }
 	console.log(randomNum);//数値確認用
 });
 
