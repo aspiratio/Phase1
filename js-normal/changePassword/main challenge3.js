@@ -25,14 +25,19 @@ const changeBtn = document.getElementById("setPassword");
 changeBtn.addEventListener("click", function() {
 	const oldPw = document.getElementById("confirmPassword").value;
 	const newPw = document.getElementById("newPassword").value;
+
+	//正規表現（郵便番号）
+	const pattern = /abc/g;
+	let result = newPw.search(pattern);
+
 	if (currentPw === oldPw) {
 		if (currentPw !== newPw) {
-			if (newPw.length >= 8) {
+			if (result < 0) {
 				currentPw = newPw;
 				nowPassword.textContent = `現在のパスワードは${currentPw}`;
 				alert(`新しいパスワードは${newPw}です`);	
 			} else {
-				alert("8文字以上にしてください!")
+				alert("abcが連続で並んだパスワードは使えません!")
 			}
 		} else {
 			alert("同じパスワードは使えません!");
