@@ -4,6 +4,7 @@ body {
 p {
   display: inline-block;
   font-size: 30px;
+  margin: 0; /*自動で入るmarginを消すため*/
 }
 #setTime {
   width: 100;
@@ -15,12 +16,13 @@ p {
 
 /*  チャレンジ問題 */
 
-/* .slot-wrap {
+.slot-wrap {
   height: 160px;
+  width: 100px;
+  margin: 0 auto;
 }
-
 .slot {
   height: 40px;
-} */
+}
 
 /*  チャレンジ問題  ここまで */
