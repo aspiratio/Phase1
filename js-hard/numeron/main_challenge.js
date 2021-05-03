@@ -22,11 +22,8 @@
 //  リロード
 
 //確認用
-console.log("3桁でないとき")
-console.log("同じ数字のとき")
-console.log("外れたとき")
-console.log("当たったとき")
-console.log("当てたあと答えが変わること")
+console.log("外すと残り回数が減る")
+console.log("残り回数0でメッセージ")
 
 //ランダムで重複しない3つの数字の配列を作る
 const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; //0〜9の配列を作る
@@ -42,17 +39,21 @@ for (i = 0; i < 3; i++) {
 console.log(rightArray); //答え確認用
 const answerNum = document.getElementById("answerNum");
 const numCheck = document.getElementById("numCheck");
+const remainTurn = document.getElementById("remainTurn");
+
+let turn = 3;
+remainTurn.textContent = `あと残り${turn}回です`
 
 numCheck.addEventListener("click", function() {
 	let eat = 0;
 	let bit = 0;
-
+	
 	const answerArray = answerNum.value.split(""); //回答欄に書かれた数字を(文字列として）1桁ずつの配列に変える
 	function duplicateCheck() {
 		return new Set(answerArray).size !== answerArray.length; //回答配列に同じ文字列があればtrueになる
 	}
 	answerNum.value = ""; //フォームの中身をクリアする（配列を作った後でないといけない）
-
+	
 	if (answerArray.length !== 3) { //上記配列の要素数が3つか確認する
 		alert("3桁の数字を入力してください");
 		return;
@@ -60,6 +61,8 @@ numCheck.addEventListener("click", function() {
 		alert("同じ数字を2回以上使ってはいけません");
 		return;
 	}
+	
+	turn--;
 
 	for (i = 0; i < 3; i++) { //for文を重ねることでi=0~2のときのanserArrayの要素と、j=0~2のときのrightArrayの要素を一つずつ総当たりする
 		for (j = 0; j < 3; j++) {
@@ -76,6 +79,10 @@ numCheck.addEventListener("click", function() {
 	if (eat === 3) {
 		alert("正解です！！！");
 		location.reload();
+	} else if (turn === 0) {
+		remainTurn.textContent = `ゲームオーバー！答えは${rightArray}でした`
+	} else {
+		remainTurn.textContent = `あと残り${turn}回です`
 	}
 })
 

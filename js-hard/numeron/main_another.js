@@ -30,26 +30,33 @@ console.log("当てたあと答えが変わること")
 
 //ランダムで重複しない3つの数字の配列を作る
 const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; //0〜9の配列を作る
-const rightArray = []; //ここにランダムな数字を3つ入れる
+const rightArray = []; //正解配列
 
-for (i = 0; i < 3; i++) {
+for (i = 1; i < 4; i++) {
 	const n = array.length //配列のデータ数
 	const k = Math.floor(Math.random() * n); //0〜9の数字を一つ生成
 	
-	rightArray.push(array[k]); //配列のk番目の数字を解答配列に入れる
+	rightArray.push([i, array[k]]); //数字の順番iと正解の数字を正解配列に入れる
 	array.splice(k, 1); //代入した数字を配列から削除
 }
+
 console.log(rightArray); //答え確認用
+
 const answerNum = document.getElementById("answerNum");
 const numCheck = document.getElementById("numCheck");
 
 numCheck.addEventListener("click", function() {
 	let eat = 0;
 	let bit = 0;
+	const answerArray = [];
+	for (i = 1; i <= answerNum.value.length; i++) {
+		answerArray.push([i, Number(answerNum.value.charAt(i-1))]); //数字の順番iと回答欄に書かれた数字を1桁ずつ配列に入れる、valueで取得した数字は文字列なので数値に変換
+	}
 
-	const answerArray = answerNum.value.split(""); //回答欄に書かれた数字を(文字列として）1桁ずつの配列に変える
-	function duplicateCheck() {
-		return new Set(answerArray).size !== answerArray.length; //回答配列に同じ文字列があればtrueになる
+	function duplicateCheck() { //回答配列が[[1,2], [2,5], [3,9]]だとすると、2と5と9が等しくないか調べるための関数
+		return answerArray[0][1] === answerArray[1][1]
+				|| answerArray[0][1] === answerArray[2][1]
+				|| answerArray[1][1] === answerArray[2][1];
 	}
 	answerNum.value = ""; //フォームの中身をクリアする（配列を作った後でないといけない）
 
@@ -62,11 +69,11 @@ numCheck.addEventListener("click", function() {
 	}
 
 	for (i = 0; i < 3; i++) { //for文を重ねることでi=0~2のときのanserArrayの要素と、j=0~2のときのrightArrayの要素を一つずつ総当たりする
-		for (j = 0; j < 3; j++) {
-			if (answerArray[i] == rightArray[j]) { //answerArrayの要素は文字列、rightArrayの要素は数値だから"=="で比較する
-				if (i === j) {
-					eat++;
-				} else {
+		if (answerArray[i][1] === rightArray[i][1]) {
+			eat++;
+		} else {
+			for (j = 0; j < 3; j++) {
+				if (answerArray[i][1] === rightArray[j][1]) {
 					bit++;
 				}
 			}
