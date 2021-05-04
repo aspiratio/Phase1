@@ -9,7 +9,17 @@
 
 // 配列の中身をテーブルに追加する
 
-// 以下チャレンジ問題
+// 以下、チャレンジ問題のフロー
+
+// freeの背景色を変更する（class=hit-numをつける）
+// セットをクリック
+// ランダムで1〜75の数字を選択(重複なし)
+// アラートで表示
+// 選択された数字がテーブルにあれば
+// 	セルの背景色を変更する
+// カウントを1減らす
+// カウントが0なら
+// 	セットボタンを押せなくする
 
 const bingo = ["B", "I", "N", "G", "O"];
 
@@ -38,7 +48,7 @@ randomNum(75, 61, column5); //61-75
 const columns = [column1, column2, column3, column4, column5]; //二次元配列作成
 console.log(columns); //確認用
 
-// 行と列を入れ替える関数
+// 行と列を入れ替える関数(解説はexplain.jsに記載)
 // function transpose(a) {
 // 	return a[0].map(function (_, c) {
 // 			return a.map(function (r) {
@@ -119,3 +129,45 @@ for (i = 0; i < lines.length; i++) { //二次元配列の要素数だけ繰り�
 	}
 }
 
+// 以下、チャレンジ問題
+
+//表のx行目、y列目（一番端は0行目、0列目）のセルにclassを追加する関数
+function addClass(x, y) {
+	const tableLine = table.rows;
+	const hitCell = tableLine[x].querySelector(`td:nth-child(${y + 1})`); //nth-childは1からカウントするため、インデックス番号＋1
+	hitCell.classList.add("hit-num");
+}
+
+//任意の数字が含まれるセルを特定し、classを追加する関数
+function searchCell(num) {
+	const lineNum = lines.findIndex(function(element) {
+		return element.includes(num); //2次元配列にnumを含む要素（配列）があるか確認する、見つかればインデックス番号が帰る、見つからなければ-1が帰る
+	});
+	if (lineNum !== -1) { //上記でnumを含む配列が見つかれば
+		const columnNum = lines[lineNum].indexOf(num); //その配列の何番目の要素にnumが含まれるか確認する、インデックス番号が帰る
+		addClass(lineNum, columnNum);
+	}
+}
+
+searchCell("free"); //freeの背景色変更
+
+const hitNum = document.getElementById("hitNum"); //ボタン要素取得
+
+const nonSelectedNum = []; //1~75の数値が入った配列を作成
+for (i = 1; i <= 75; i++) {
+	nonSelectedNum.push(i);
+}
+
+hitNum.addEventListener("click", function() {
+	if (nonSelectedNum.length !== 0) {
+		const n = nonSelectedNum.length;
+		const k = Math.floor(Math.random() * n);
+		
+		const selectedNum = nonSelectedNum[k]; //配列のk番目の数字を取得
+		nonSelectedNum.splice(k, 1); //取得した数字を配列から除く
+		
+		alert(`数字は${selectedNum}番です！`);
+		
+		searchCell(selectedNum);
+	}
+})
