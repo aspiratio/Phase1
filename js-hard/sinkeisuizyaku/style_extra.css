@@ -1,0 +1,51 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  width: 1050px;
+  margin: auto;
+}
+
+.point {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+}
+
+panel {
+  width: 310px;
+  height: 340px;
+  overflow: hidden;
+}
+
+.card {
+  width: 65px;
+  height: 80px;
+  line-height: 80px;
+  border: 1px solid silver;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  box-shadow: gray 2px 2px;
+  background: white;
+  float: left;
+  cursor: pointer;
+  margin: 10px;
+}
+/* 裏の状態 */
+.back {
+  background-size: 60px 80px;
+  background-color: rgb(45, 139, 50);
+}
+
+.finish {
+  opacity: 0;
+  cursor: default;
+}
+
+.red {
+  color: red;
+}
