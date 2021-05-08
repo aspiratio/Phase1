@@ -89,6 +89,9 @@ console.log(cardNums); //確認用
 
 for (let i = 0; i < cardNums.length; i++) {
 	panel.children[i].addEventListener("click", function() {
+		if (/^[♥♦]/.test(cardNums[i][1])) { //先頭の文字がハートまたはダイヤのときにtrue
+			this.classList.add("red");
+		}
 		//カードを表にする処理
 		if (count === 0) { //1枚目
 			this.classList.remove("back"); //aタグからclass="back"を削除
@@ -96,22 +99,19 @@ for (let i = 0; i < cardNums.length; i++) {
 			firstNum = cardNums[i][0]; //計算用の数字
 			firstCard = i; //めくったカードのインデックス番号を記録
 			count++;
-			if (/^[♥♦]/.test(cardNums[i][1])) { //先頭の文字がハートまたはダイヤのときにtrue
-				this.classList.add("red");
-			}
 		} else if (count === 1) { //2枚目
 			this.classList.remove("back");
 			this.textContent = cardNums[i][1];
 			secondNum = cardNums[i][0];
 			secondCard = i;
-
+			
 			if (firstCard === secondCard) { //イレギュラー（1枚目と2枚目が同じカードだったときの対策）
 				return;
 			}
 			count++; //これがない場合、0.5秒以内に3枚目をクリックされると誤動作を起こす
-
+			
 			setTimeout(function() {
-				if (firstNum === secondNum) {
+				if (firstNum === secondNum) { //揃ったカードを見えなくさせる
 					panel.children[firstCard].classList.add("finish");
 					panel.children[secondCard].classList.add("finish");
 					if (playerNum === 1) {
@@ -120,10 +120,16 @@ for (let i = 0; i < cardNums.length; i++) {
 						match2++;
 					}
 				} else {
-					panel.children[firstCard].classList.add("back");
+					panel.children[firstCard].classList.add("back"); //揃わなかったカードを裏返す
 					panel.children[secondCard].classList.add("back");
 					panel.children[firstCard].textContent = "";
 					panel.children[secondCard].textContent = "";
+
+					const turnDeg1 = Math.random() * 24 - 12; //ランダムで-8〜+8の数字を選択
+					const turnDeg2 = Math.random() * 24 - 12;
+					panel.children[firstCard].style.transform = `rotate(${turnDeg1}deg)`; //1枚目に指定したaタグを-8〜+8度回転
+					panel.children[secondCard].style.transform = `rotate(${turnDeg2}deg)`;
+
 					if (playerNum === 1) {
 						playerNum = 2;
 						player2Point.classList.add("red");
@@ -134,7 +140,7 @@ for (let i = 0; i < cardNums.length; i++) {
 						player2Point.classList.remove("red");
 					}
 				}
-
+				
 				player1Point.textContent = `player1 : ${match1}点`;
 				player2Point.textContent = `player2 : ${match2}点`;
 				
