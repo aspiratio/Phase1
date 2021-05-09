@@ -18,3 +18,26 @@ td {
 }
 
 /* チャレンジ問題 ここまで */
+
+/* 以下、エクストラ */
+.text-content {
+  display: flex;
+}
+
+.hitted-num {
+  font-size: 25px;
+}
+
+#reach {
+  font-size: 25px;
+  color: red;
+  margin-left: 30px;
+}
+
+#numbers {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 500px;
+  width: 300px;
+}
